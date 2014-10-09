@@ -1,3 +1,8 @@
+autocmd VimEnter * NERDTree
+autocmd BufEnter * NERDTreeMirror
+
+autocmd VimEnter * wincmd w
+
 """"""""""""""""""""""""""""""
 " airline
 """"""""""""""""""""""""""""""

@@ -8,6 +8,8 @@ endif
 syntax on
 filetype plugin indent on
 
+set nu
+
 set visualbell
 
 set wildmenu
@@ -18,14 +20,17 @@ set splitbelow
 
 set hidden
 
+colorscheme railscasts
 set guifont=Monaco:h16
 set guioptions-=T guioptions-=e guioptions-=L guioptions-=r
-set shell=bash
 
 augroup vimrc
   autocmd!
   autocmd GuiEnter * set columns=120 lines=70 number
 augroup END
+
+command Ntt NERDTreeToggle
+command Ntf NERDTreeFocus
 
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
