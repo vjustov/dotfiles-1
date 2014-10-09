@@ -58,3 +58,8 @@
 	autosquash = true
 [diff]
 	algorithm = patience
+[github]
+	user = vjustov
+[user]
+	email = viktor@vjustov.me
+	name = "Viktor Justo Vasquez"
