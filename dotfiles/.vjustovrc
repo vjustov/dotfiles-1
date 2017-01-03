@@ -1,17 +1,20 @@
 # vim:set ft=sh sw=2 sts=2:
 
+# global rake aliases
+alias deploy='rake -f ~/bin/deploy.rake deploy'
+
 
 # Custom Directories
 [ -e "$RUBY_DIR" ] || RUBY_DIR="$HOME/ruby"
 export RUBY_DIR
 
-[ -e "$RAILS_DIR" ] || RAILS_DIR="$HOME/rails"
-export RAILS_DIR
+[ -e "$PPT_DIR" ] || PPT_DIR="$HOME/ppt"
+export PPT_DIR
 
-[ -e "$GO_DIR" ] || GO_DIR="$HOME/go"
-export GO_DIR
+[ -e "$ELIXIR_DIR" ] || ELIXIR_DIR="$HOME/elixir"
+export ELIXIR_DIR
 
-[ -e "$NODE_DIR" ] || NODE_DIR="$HOME/node"
+[ -e "$NODE_DIR" ] || NODE_DIR="$HOME/njs"
 export NODE_DIR
 
 rcd() {
@@ -28,15 +31,15 @@ ncd() {
   fi
 }
 
-rorcd() {
-  cd "$RAILS_DIR/$1"
+pptcd() {
+  cd "$PPT_DIR/$1"
   if [ -e .git/safe -a ! -L .git/bin ]; then
     ln -s ../bin .git
   fi
 }
 
-gocd() {
-  cd "$GO_DIR/$1"
+elixircd() {
+  cd "$ELIXIR_DIR/$1"
   if [ -e .git/safe -a ! -L .git/bin ]; then
     ln -s ../bin .git
   fi
@@ -90,7 +93,7 @@ if [ -n "$BASH_VERSION" ]; then
   }
   complete -F _rorcd rorcd
 elif [ -n "$ZSH_VERSION" ]; then
-  compctl -/ -S '' -W "$RAILS_DIR" hcd
+  compctl -/ -S '' -W "$RUBY_DIR" hcd
 fi
 
 __rails_root() {

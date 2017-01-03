@@ -1,6 +1,6 @@
 # ~/.bashrc
 # vim:set ft=sh sw=2 sts=2:
-source "$HOME/.gotjoshrc"
+source "$HOME/.vjustovrc"
 
 # Store 10,000 history entries
 export HISTSIZE=10000
